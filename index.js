@@ -9,6 +9,14 @@ for (const perCard of totalCard) {
         const PlayerPrice =event.target.parentNode.childNodes[3].childNodes[1].innerText;
         const playerCatagory =event.target.parentNode.childNodes[5].childNodes[1].innerText
         const playerContainer = document.getElementById('selected-players-container')
+
+
+        const myBudget =convertedToInt('budget');
+        const innerBudget = myBudget - parseInt(PlayerPrice);
+        document.getElementById('budget').innerText=innerBudget
+
+
+
         const div =document.createElement('div');
         div.classList.add('selected-players')
         const p =document.createElement('p');
