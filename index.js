@@ -9,11 +9,38 @@ for (const perCard of totalCard) {
         const PlayerPrice =event.target.parentNode.childNodes[3].childNodes[1].innerText;
         const playerCatagory =event.target.parentNode.childNodes[5].childNodes[1].innerText
         const playerContainer = document.getElementById('selected-players-container')
+        
+        
+ 
+        const firstCount = convertedToInt('cart');
+        const firstLeft = convertedToInt('left')
+        if (firstCount+1 > 6 || firstLeft <= 0) {
+            alert('limit finish')
+            return
+        }
+        event.target.setAttribute('disabled',false);
+        event.target.parentNode.style.backgroundColor ="gray"
+
+
+        
+        
+
+
 
 
         const myBudget =convertedToInt('budget');
         const innerBudget = myBudget - parseInt(PlayerPrice);
         document.getElementById('budget').innerText=innerBudget
+
+
+        const myCart = convertedToInt('cart');
+        const innerCart = myCart +1 ;
+        document.getElementById('cart').innerHTML=innerCart;
+
+
+        const myLeft = convertedToInt('left');
+        const innerLeft  = myLeft - 1;
+        document.getElementById('left').innerHTML=innerLeft;
 
 
 
@@ -50,9 +77,11 @@ const discountCost = document.getElementById('coupon-code').value;
 if (discountCost == "love420") {
     const couponDis = totalCost * 0.2;
     document.getElementById('grand-total').innerText =totalCost-couponDis;
+    document.getElementById('coupon-code').style.visibility = 'hidden';
 }else {
     alert('invalid coupon code')
 }
+discountCost.target.setAttribute('disabled',false);
 
   }
 }
