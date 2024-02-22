@@ -86,3 +86,24 @@ const res = friendsArray(friends)
 console.log(res);
 
 
+
+
+
+const myFunctio = (nums) => {
+    let sum =0
+for (const num of nums) {
+    const sqr = num*num;
+sum = sum + sqr;
+}
+// return sum;
+let avarage = sum / (nums.length);
+const numFix =avarage.toFixed(2);
+const FloatNum =parseFloat(numFix);
+return FloatNum;
+
+}
+
+const myNum = [9,7,10,11,12,13,14];
+const finalRes = myFunctio(myNum);
+console.log(finalRes);
+
