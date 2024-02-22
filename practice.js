@@ -107,3 +107,22 @@ const myNum = [9,7,10,11,12,13,14];
 const finalRes = myFunctio(myNum);
 console.log(finalRes);
 
+
+
+
+const myFunction  =(a,b) =>{
+const totalArray =[...a,...b];
+// console.log(totalArray);
+// for (const a of totalArray) {
+    // console.log(a);
+    const maxNum = Math.max(...totalArray);
+    // console.log(maxNum);
+    return maxNum;
+// }
+}
+
+
+
+const arry1 =[1,2,3,4,5,6];
+const arry2 =[9,10,11,18];
+console.log(myFunction(arry1,arry2));
